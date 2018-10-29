@@ -1,6 +1,16 @@
 package edu.insightr.gildedrose;
 
+import java.util.Arrays;
+
 public class Inventory {
+
+    public Item[] getItems() {
+        return items;
+    }
+
+    public void setItems(Item[] items) {
+        this.items = items;
+    }
 
     private Item[] items;
 
@@ -22,6 +32,11 @@ public class Inventory {
 
     }
 
+
+    // 1- Add to github and add a tag
+    // 2- Create a branch named "visitor"
+    // 3- use the visitor pattern
+
     public void printInventory() {
         System.out.println("***************");
         for (Item item : items) {
@@ -31,20 +46,25 @@ public class Inventory {
         System.out.println("\n");
     }
 
+
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (items[i].getName() != "Aged Brie"
                     && items[i].getName() != "Backstage passes to a TAFKAL80ETC concert") {
                 if (items[i].getQuality() > 0) {
-                    if (items[i].getName() != "Sulfuras, Hand of Ragnaros") {
+                    if (items[i].getName() != "Sulfuras, Hand of Ragnaros"
+                        && items[i].getName() != "Conjured Mana Cake") {
                         items[i].setQuality(items[i].getQuality() - 1);
+                    }
+                    else if(items[i].getName() != "Sulfuras, Hand of Ragnaros"){
+                        items[i].setQuality(items[i].getQuality() - 2);
                     }
                 }
             } else {
                 if (items[i].getQuality() < 50) {
                     items[i].setQuality(items[i].getQuality() + 1);
 
-                    if (items[i].getName() == "Backstage passes to a TAFKAL80ETC concert") {
+                    if ("Backstage passes to a TAFKAL80ETC concert".equals(items[i].getName())) {
                         if (items[i].getSellIn() < 11) {
                             if (items[i].getQuality() < 50) {
                                 items[i].setQuality(items[i].getQuality() + 1);
@@ -68,8 +88,12 @@ public class Inventory {
                 if (items[i].getName() != "Aged Brie") {
                     if (items[i].getName() != "Backstage passes to a TAFKAL80ETC concert") {
                         if (items[i].getQuality() > 0) {
-                            if (items[i].getName() != "Sulfuras, Hand of Ragnaros") {
+                            if (items[i].getName() != "Sulfuras, Hand of Ragnaros"
+                                    && items[i].getName() != "Conjured Mana Cake") {
                                 items[i].setQuality(items[i].getQuality() - 1);
+                            }
+                            else if(items[i].getName() != "Sulfuras, Hand of Ragnaros"){
+                                items[i].setQuality(items[i].getQuality() - 2);
                             }
                         }
                     } else {
@@ -83,6 +107,17 @@ public class Inventory {
             }
         }
     }
+
+
+   /* public void superTruc(){
+        Visitor visitorQuality = new VisitorQuality();
+        Visitor visitorSellIn = new VisitorSellIn();
+        for (int i = 0; 1 < items.length;i++){
+            item.accept(visitorQuality);
+            item.accept(visitorSellIn);
+        }
+
+    }*/
 
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
