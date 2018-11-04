@@ -9,6 +9,12 @@ public class Inventory {
     public void setItems(Item[] items) {
         this.items = items;
     }
+    public final String Dexterity_Vest = "+5 Dexterity Vest";
+    public final String Aged_Brie = "Aged Brie";
+    public final String Elixir_of_the_Mongoose = "Elixir of the Mongoose";
+    public final String Sulfuras_Hand_of_Ragnaros = "Sulfuras, Hand of Ragnaros";
+    public final String Backstage_passes_to_a_TAFKAL80ETC_concert = "Backstage passes to a TAFKAL80ETC concert";
+    public final String Conjured_Mana_Cake= "Conjured Mana Cake";
 
     private Item[] items;
 
@@ -16,12 +22,12 @@ public class Inventory {
     public Inventory() {
         super();
         items = new Item[]{
-                new Item("+5 Dexterity Vest", 10, 20),
-                new Item("Aged Brie", 2, 0),
-                new Item("Elixir of the Mongoose", 5, 7),
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Conjured Mana Cake", 3, 6)
+                new Item(Dexterity_Vest, 10, 20),
+                new Item(Aged_Brie, 2, 0),
+                new Item(Elixir_of_the_Mongoose, 5, 7),
+                new Item(Sulfuras_Hand_of_Ragnaros, 0, 80),
+                new Item(Backstage_passes_to_a_TAFKAL80ETC_concert, 15, 20),
+                new Item(Conjured_Mana_Cake, 3, 6)
         };
 
     }

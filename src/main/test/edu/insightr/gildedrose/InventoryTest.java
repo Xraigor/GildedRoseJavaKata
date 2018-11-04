@@ -15,7 +15,7 @@ class InventoryTest {
         assertEquals("+5 Dexterity Vest", vest.getName());
         assertEquals( 20, vest.getQuality());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals( 19, vest.getQuality());
         //assertThat(agedbrie.getSellIn(),equalsTo(1));
     }
@@ -27,7 +27,7 @@ class InventoryTest {
         assertEquals("Aged Brie", Brie.getName());
         assertEquals( 0, Brie.getQuality());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals( 1, Brie.getQuality());
     }
     @Test
@@ -38,7 +38,7 @@ class InventoryTest {
         assertEquals("Elixir of the Mongoose", Mongoose.getName());
         assertEquals(7, Mongoose.getQuality());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals(6, Mongoose.getQuality());
     }
     @Test
@@ -49,7 +49,7 @@ class InventoryTest {
         assertEquals("Sulfuras, Hand of Ragnaros", Sulfuras.getName());
         assertEquals(80, Sulfuras.getQuality());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals(80, Sulfuras.getQuality());
     }
     @Test
@@ -60,7 +60,7 @@ class InventoryTest {
         assertEquals("Backstage passes to a TAFKAL80ETC concert", Backstage.getName());
         assertEquals(20, Backstage.getQuality());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals(21, Backstage.getQuality());
     }
     @Test
@@ -71,7 +71,7 @@ class InventoryTest {
         assertEquals("Conjured Mana Cake",Conjured.getName());
         assertEquals(6,Conjured.getQuality());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals(4, Conjured.getQuality());
     }
 
@@ -84,7 +84,7 @@ class InventoryTest {
     assertEquals("+5 Dexterity Vest", vesttSell.getName());
     assertEquals( 10, vesttSell.getSellIn());
 
-    testInventory.Visitor();
+    testInventory.updateQuality();
     assertEquals( 9, vesttSell.getSellIn());
 }
     @Test
@@ -95,7 +95,7 @@ class InventoryTest {
         assertEquals("Aged Brie", BrieSellIn.getName());
         assertEquals( 2, BrieSellIn.getSellIn());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals( 1, BrieSellIn.getSellIn());
     }
     @Test
@@ -106,7 +106,7 @@ class InventoryTest {
         assertEquals("Elixir of the Mongoose", MongooseSellIn.getName());
         assertEquals(5, MongooseSellIn.getSellIn());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals(4, MongooseSellIn.getSellIn());
     }
     @Test
@@ -117,7 +117,7 @@ class InventoryTest {
         assertEquals("Sulfuras, Hand of Ragnaros", SulfurasSellIn.getName());
         assertEquals(0, SulfurasSellIn.getSellIn());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals(0, SulfurasSellIn.getSellIn());
     }
     @Test
@@ -128,7 +128,7 @@ class InventoryTest {
         assertEquals("Backstage passes to a TAFKAL80ETC concert", BackstageSellIn.getName());
         assertEquals(15, BackstageSellIn.getSellIn());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals(14, BackstageSellIn.getSellIn());
     }
     @Test
@@ -139,7 +139,7 @@ class InventoryTest {
         assertEquals("Conjured Mana Cake",ConjuredSellIn.getName());
         assertEquals(3,ConjuredSellIn.getSellIn());
 
-        testInventory.Visitor();
+        testInventory.updateQuality();
         assertEquals(2, ConjuredSellIn.getSellIn());
     }
 }
