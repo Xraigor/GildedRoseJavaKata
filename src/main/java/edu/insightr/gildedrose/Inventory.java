@@ -12,10 +12,6 @@ public class Inventory {
 
     private Item[] items;
 
-    public Inventory(Item[] items) {
-        super();
-        this.items = items;
-    }
 
     public Inventory() {
         super();
